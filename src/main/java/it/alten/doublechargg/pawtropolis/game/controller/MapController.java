@@ -35,8 +35,11 @@ public class MapController {
         }
         for (int i = 0; i < roomNumber - 1; i++) {
             var selectedCardinalPointIndex = RANDOMIZER.nextInt(CardinalPoints.values().length);
-            while (roomList.get(i).adjacentRoomExists(CardinalPoints.values()[selectedCardinalPointIndex])) {
+            Room currentRoom = roomList.get(i);
+            CardinalPoints cardinalPoint = CardinalPoints.values()[selectedCardinalPointIndex];
+            while (currentRoom.adjacentRoomExists(cardinalPoint)) {
                 selectedCardinalPointIndex = RANDOMIZER.nextInt(CardinalPoints.values().length);
+                cardinalPoint = CardinalPoints.values()[selectedCardinalPointIndex];
             }
             connectRooms(CardinalPoints.values()[selectedCardinalPointIndex], roomList.get(i), roomList.get(i + 1));
         }
