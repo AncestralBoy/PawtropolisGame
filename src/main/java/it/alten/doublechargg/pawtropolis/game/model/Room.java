@@ -103,7 +103,8 @@ public class Room {
 
     @Override
     public String toString() {
-        return String.format("You are in room %s%n" +
+        return String.format("\n" +
+                        "You are in room %s%n" +
                         "Items: %s%n" +
                         "NPC: %s%n" +
                         "Doors: %s",
