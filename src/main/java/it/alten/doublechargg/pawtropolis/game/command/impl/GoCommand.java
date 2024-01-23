@@ -28,7 +28,7 @@ public class GoCommand implements CommandWithParam {
         }
         if (currentRoom.adjacentRoomExists(cardinalPoint)) {
             gameController.setCurrentRoom(currentRoom.getAdjacentRoomByCardinalPoint(cardinalPoint));
-            return String.format("%s entered the room %s%n", player.getName(), gameController.getCurrentRoom().getName());
+            return String.format("%s entered the room %s%n", player.getName(), gameController.getCurrentRoom().toString());
         }
         return "Not existent room";
 
