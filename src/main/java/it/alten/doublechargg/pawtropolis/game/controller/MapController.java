@@ -15,7 +15,7 @@ import java.util.Random;
 @Getter
 @Component
 public class MapController {
-
+    //Prova
     private static final Random RANDOMIZER = new Random();
     private final List<Room> roomList;
     private final RoomFactory roomFactory;
