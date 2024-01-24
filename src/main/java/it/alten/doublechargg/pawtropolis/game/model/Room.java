@@ -18,6 +18,7 @@ public class Room {
     private final List<Animal> animals;
     private final EnumMap<CardinalPoints, Room> adjacentRooms;
     @Setter
+    @Getter
     private boolean lockedDoor;
     @Getter
     @Setter
@@ -97,11 +98,12 @@ public class Room {
     }
 
     private String getAdjacentRoomListAsString() {
-        return adjacentRooms.keySet()
-                .stream()
-                .map(CardinalPoints::getName)
-                .collect(Collectors.joining(", "));
-
+        String string = new String();
+        for(CardinalPoints c : adjacentRooms.keySet()){
+            string += c.getName() + (adjacentRooms.get(c).isLockedDoor() ? "(Locked)" : "(Open)") + ", ";
+        }
+        string = string.substring(0,string.length()-2);
+        return string;
     }
 
     @Override
@@ -113,4 +115,5 @@ public class Room {
                         "Doors: %s",
                 name, getItemsListAsString(), getAnimalsListAsString(), getAdjacentRoomListAsString());
     }
+
 }
