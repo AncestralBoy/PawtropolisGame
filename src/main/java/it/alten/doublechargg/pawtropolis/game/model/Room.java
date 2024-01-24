@@ -17,6 +17,8 @@ public class Room {
     private final List<Item> items;
     private final List<Animal> animals;
     private final EnumMap<CardinalPoints, Room> adjacentRooms;
+    @Setter
+    private boolean lockedDoor;
     @Getter
     @Setter
     private String name;
@@ -26,6 +28,7 @@ public class Room {
         items = new ArrayList<>();
         animals = new ArrayList<>();
         adjacentRooms = new EnumMap<>(CardinalPoints.class);
+        lockedDoor = false;
     }
 
     public int getItemsNumber() {
