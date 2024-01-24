@@ -3,6 +3,7 @@ package it.alten.doublechargg.pawtropolis.game.controller;
 import it.alten.doublechargg.pawtropolis.game.CommandFactory;
 import it.alten.doublechargg.pawtropolis.game.command.interfaces.CommandWithoutParam;
 import it.alten.doublechargg.pawtropolis.game.exceptions.CommandFailedException;
+import it.alten.doublechargg.pawtropolis.game.model.Item;
 import it.alten.doublechargg.pawtropolis.game.model.Player;
 import it.alten.doublechargg.pawtropolis.game.model.Room;
 import lombok.Getter;
@@ -19,6 +20,7 @@ import java.util.Scanner;
 public class GameController implements CommandLineRunner {
 
     private static final Scanner scanner = new Scanner(System.in);
+    @Getter
     private final MapController mapController;
     private final InputController inputController;
     private final CommandFactory commandFactory;
